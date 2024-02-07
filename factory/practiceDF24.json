@@ -1,0 +1,15 @@
+{
+	"name": "practiceDF24",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned,UserAssigned",
+		"principalId": "0d2b935e-0bdf-4b7b-a84d-db6a2d12deed",
+		"tenantId": "5802c687-ee19-433e-84c6-2bc4535438dd",
+		"userAssignedIdentities": {
+			"/subscriptions/bbda4024-ea06-4185-96b1-42f3197df61c/resourcegroups/practice-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/DataFactoryMI": {
+				"clientId": "ed7b0a43-0414-427d-8204-fdfc2e491842",
+				"principalId": "2014afb4-98d4-459b-8e85-c374ab60ffef"
+			}
+		}
+	}
+}
