@@ -8,6 +8,9 @@
 		"LS_BlobInput_connectionString": {
 			"value": ""
 		},
+		"LS_DynamicOutput_accountKey": {
+			"value": ""
+		},
 		"LS_Folder_Link_connectionString": {
 			"value": ""
 		},
@@ -16,6 +19,18 @@
 		},
 		"LS_output_accountKey": {
 			"value": ""
+		},
+		"LS_DynamicHttpServer_properties_typeProperties_url": {
+			"value": "@{linkedService().baseURL}"
+		},
+		"LS_DynamicOutput_properties_typeProperties_url": {
+			"value": "https://datalakepractice24.dfs.core.windows.net/"
+		},
+		"LS_HttpServer_properties_typeProperties_url": {
+			"value": "https://opendata.ecdc.europa.eu/"
+		},
+		"LS_HttpServer_Dynamic_properties_typeProperties_url": {
+			"value": "@{linkedService().baseURL}"
 		},
 		"LS_Multiple_Output_properties_typeProperties_url": {
 			"value": "https://datalakepractice24.dfs.core.windows.net/"

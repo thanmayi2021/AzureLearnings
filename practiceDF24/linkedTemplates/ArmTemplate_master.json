@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_BlobInput'"
 		},
+		"LS_DynamicOutput_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_DynamicOutput'"
+		},
 		"LS_Folder_Link_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_Folder_Link'"
@@ -22,6 +26,22 @@
 		"LS_output_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_output'"
+		},
+		"LS_DynamicHttpServer_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "@{linkedService().baseURL}"
+		},
+		"LS_DynamicOutput_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://datalakepractice24.dfs.core.windows.net/"
+		},
+		"LS_HttpServer_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://opendata.ecdc.europa.eu/"
+		},
+		"LS_HttpServer_Dynamic_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "@{linkedService().baseURL}"
 		},
 		"LS_Multiple_Output_properties_typeProperties_url": {
 			"type": "string",
@@ -61,6 +81,9 @@
 					"LS_BlobInput_connectionString": {
 						"value": "[parameters('LS_BlobInput_connectionString')]"
 					},
+					"LS_DynamicOutput_accountKey": {
+						"value": "[parameters('LS_DynamicOutput_accountKey')]"
+					},
 					"LS_Folder_Link_connectionString": {
 						"value": "[parameters('LS_Folder_Link_connectionString')]"
 					},
@@ -69,6 +92,18 @@
 					},
 					"LS_output_accountKey": {
 						"value": "[parameters('LS_output_accountKey')]"
+					},
+					"LS_DynamicHttpServer_properties_typeProperties_url": {
+						"value": "[parameters('LS_DynamicHttpServer_properties_typeProperties_url')]"
+					},
+					"LS_DynamicOutput_properties_typeProperties_url": {
+						"value": "[parameters('LS_DynamicOutput_properties_typeProperties_url')]"
+					},
+					"LS_HttpServer_properties_typeProperties_url": {
+						"value": "[parameters('LS_HttpServer_properties_typeProperties_url')]"
+					},
+					"LS_HttpServer_Dynamic_properties_typeProperties_url": {
+						"value": "[parameters('LS_HttpServer_Dynamic_properties_typeProperties_url')]"
 					},
 					"LS_Multiple_Output_properties_typeProperties_url": {
 						"value": "[parameters('LS_Multiple_Output_properties_typeProperties_url')]"
@@ -79,6 +114,26 @@
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "practiceDF24_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'practiceDF24_ArmTemplate_0')]"
+			]
 		}
 	]
 }
