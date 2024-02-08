@@ -1,0 +1,40 @@
+{
+	"name": "DelimitedText1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_output",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "covidData.csv",
+				"fileSystem": "output"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "CourseID",
+				"type": "String"
+			},
+			{
+				"name": "Course",
+				"type": "String"
+			},
+			{
+				"name": "Duration_hours",
+				"type": "String"
+			},
+			{
+				"name": "Fee",
+				"type": "String"
+			}
+		]
+	}
+}
