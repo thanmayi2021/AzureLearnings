@@ -48,18 +48,45 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_Dynamic_Dataset",
-						"type": "DatasetReference"
+						"referenceName": "DS_DynamicHTTP_Input",
+						"type": "DatasetReference",
+						"parameters": {
+							"baseURL": {
+								"value": "@pipeline().parameters.baseURL",
+								"type": "Expression"
+							},
+							"relativeURL": {
+								"value": "@pipeline().parameters.relativeURL",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText1",
-						"type": "DatasetReference"
+						"referenceName": "DS_Dynamic_http_output",
+						"type": "DatasetReference",
+						"parameters": {
+							"fileName": {
+								"value": "@pipeline().parameters.fileName",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
+		"parameters": {
+			"fileName": {
+				"type": "string"
+			},
+			"baseURL": {
+				"type": "string"
+			},
+			"relativeURL": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
