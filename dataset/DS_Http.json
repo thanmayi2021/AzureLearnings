@@ -1,0 +1,22 @@
+{
+	"name": "DS_Http",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_HttpServer",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "covid19/vaccine_tracker/csv/data.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
