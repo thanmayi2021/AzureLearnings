@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "avocado_out.csv",
+				"fileName": "avocado_ifexist.csv",
 				"fileSystem": "output"
 			},
 			"columnDelimiter": ",",
