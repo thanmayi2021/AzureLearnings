@@ -1,18 +1,17 @@
 {
-	"name": "DS_Output",
+	"name": "DS_input",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "LS_Output",
+			"referenceName": "LS_Blobstorage",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation",
-				"fileName": "filtered_honda_accord.csv",
-				"folderPath": "out",
-				"fileSystem": "output"
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Cars93.csv",
+				"container": "raw"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

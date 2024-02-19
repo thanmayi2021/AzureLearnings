@@ -1,0 +1,72 @@
+{
+	"name": "data flow 1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DS_input",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DS_Output",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "filter1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          Manufacturer as string,",
+				"          Model as string,",
+				"          Type as string,",
+				"          {Min.Price} as double,",
+				"          Price as double,",
+				"          {Max.Price} as double,",
+				"          {MPG.city} as short,",
+				"          {MPG.highway} as short,",
+				"          AirBags as string,",
+				"          DriveTrain as string,",
+				"          Cylinders as string,",
+				"          EngineSize as double,",
+				"          Horsepower as short,",
+				"          RPM as short,",
+				"          {Rev.per.mile} as short,",
+				"          {Man.trans.avail} as boolean,",
+				"          {Fuel.tank.capacity} as double,",
+				"          Passengers as short,",
+				"          Length as short,",
+				"          Wheelbase as short,",
+				"          Width as short,",
+				"          {Turn.circle} as short,",
+				"          {Rear.seat.room} as string,",
+				"          {Luggage.room} as string,",
+				"          Weight as short,",
+				"          Origin as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 filter(Manufacturer == 'Honda' || Model == 'Accord') ~> filter1",
+				"filter1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
+			]
+		}
+	}
+}
