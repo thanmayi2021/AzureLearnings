@@ -1,0 +1,9 @@
+{
+	"name": "adfpracticesession2024",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "819be525-bc6b-4022-88b9-d1f54a8836c5",
+		"tenantId": "5802c687-ee19-433e-84c6-2bc4535438dd"
+	}
+}
