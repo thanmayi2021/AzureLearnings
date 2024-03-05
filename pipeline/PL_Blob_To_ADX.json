@@ -1,0 +1,31 @@
+{
+	"name": "PL_Blob_To_ADX",
+	"properties": {
+		"activities": [
+			{
+				"name": "Azure Data Explorer Command1",
+				"type": "AzureDataExplorerCommand",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"command": ".ingest into table employees\nh'https://storagedatalake24.blob.core.windows.net/input/data.csv?sp=r&st=2024-03-05T00:10:14Z&se=2024-03-05T08:10:14Z&spr=https&sv=2022-11-02&sr=b&sig=hovfHI7%2Bl8zqGmMbp7MoFUM%2B72WfW4aykIF2yhKVKEc%3D';",
+					"commandTimeout": "00:20:00"
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_AzureDataExplorer",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-03-05T00:19:18Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

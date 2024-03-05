@@ -1,0 +1,15 @@
+{
+	"name": "adfadxpractice24",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned,UserAssigned",
+		"principalId": "5120e110-1846-4df2-8eda-79019680959b",
+		"tenantId": "5802c687-ee19-433e-84c6-2bc4535438dd",
+		"userAssignedIdentities": {
+			"/subscriptions/bbda4024-ea06-4185-96b1-42f3197df61c/resourcegroups/adxtoblobpipeline/providers/Microsoft.ManagedIdentity/userAssignedIdentities/adfaccesstoadx": {
+				"clientId": "04201443-c4f6-4842-8f5b-0bc1d1c65bd1",
+				"principalId": "d9db7e0b-2173-40da-a3b1-d4267ecedeaf"
+			}
+		}
+	}
+}
