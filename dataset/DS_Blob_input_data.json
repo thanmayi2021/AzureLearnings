@@ -1,0 +1,128 @@
+{
+	"name": "DS_Blob_input_data",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_blob_input_data",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Cars93.csv",
+				"container": "raw"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Manufacturer",
+				"type": "String"
+			},
+			{
+				"name": "Model",
+				"type": "String"
+			},
+			{
+				"name": "Type",
+				"type": "String"
+			},
+			{
+				"name": "Min.Price",
+				"type": "String"
+			},
+			{
+				"name": "Price",
+				"type": "String"
+			},
+			{
+				"name": "Max.Price",
+				"type": "String"
+			},
+			{
+				"name": "MPG.city",
+				"type": "String"
+			},
+			{
+				"name": "MPG.highway",
+				"type": "String"
+			},
+			{
+				"name": "AirBags",
+				"type": "String"
+			},
+			{
+				"name": "DriveTrain",
+				"type": "String"
+			},
+			{
+				"name": "Cylinders",
+				"type": "String"
+			},
+			{
+				"name": "EngineSize",
+				"type": "String"
+			},
+			{
+				"name": "Horsepower",
+				"type": "String"
+			},
+			{
+				"name": "RPM",
+				"type": "String"
+			},
+			{
+				"name": "Rev.per.mile",
+				"type": "String"
+			},
+			{
+				"name": "Man.trans.avail",
+				"type": "String"
+			},
+			{
+				"name": "Fuel.tank.capacity",
+				"type": "String"
+			},
+			{
+				"name": "Passengers",
+				"type": "String"
+			},
+			{
+				"name": "Length",
+				"type": "String"
+			},
+			{
+				"name": "Wheelbase",
+				"type": "String"
+			},
+			{
+				"name": "Width",
+				"type": "String"
+			},
+			{
+				"name": "Turn.circle",
+				"type": "String"
+			},
+			{
+				"name": "Rear.seat.room",
+				"type": "String"
+			},
+			{
+				"name": "Luggage.room",
+				"type": "String"
+			},
+			{
+				"name": "Weight",
+				"type": "String"
+			},
+			{
+				"name": "Origin",
+				"type": "String"
+			}
+		]
+	}
+}

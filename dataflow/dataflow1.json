@@ -1,0 +1,46 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DS_Input",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "filter1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          {_c0} as short,",
+				"          Date as date,",
+				"          AveragePrice as double,",
+				"          {Total Volume} as double,",
+				"          {4046} as double,",
+				"          {4225} as double,",
+				"          {4770} as double,",
+				"          {Total Bags} as double,",
+				"          {Small Bags} as double,",
+				"          {Large Bags} as double,",
+				"          {XLarge Bags} as double,",
+				"          type as string,",
+				"          year as short,",
+				"          region as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     partitionBy('hash', 1)) ~> source1",
+				"source1 filter(ERROR_FUNCTION('')) ~> filter1"
+			]
+		}
+	}
+}
