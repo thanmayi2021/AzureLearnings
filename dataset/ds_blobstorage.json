@@ -1,0 +1,35 @@
+{
+	"name": "ds_blobstorage",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_AzureBlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "rowId",
+				"type": "String"
+			},
+			{
+				"name": "column1",
+				"type": "String"
+			},
+			{
+				"name": "column2",
+				"type": "String"
+			}
+		]
+	}
+}
