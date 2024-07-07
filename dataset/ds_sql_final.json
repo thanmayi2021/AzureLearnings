@@ -1,0 +1,31 @@
+{
+	"name": "ds_sql_final",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "rowId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "column1",
+				"type": "varchar"
+			},
+			{
+				"name": "column2",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "dummy"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

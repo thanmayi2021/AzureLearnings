@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "ds_blob_storage",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_AzureBlobStorage",
@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "100000_rows_dataset.csv",
 				"container": "data"
 			},
 			"columnDelimiter": ",",
