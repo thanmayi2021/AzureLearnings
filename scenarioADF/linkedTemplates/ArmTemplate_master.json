@@ -1,0 +1,257 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "scenarioADF"
+		},
+		"LS_BlobInput_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_BlobInput'"
+		},
+		"LS_Blobstorage_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_Blobstorage'"
+		},
+		"LS_Cars_CSV_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Cars_CSV'"
+		},
+		"LS_Datalake_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Datalake'"
+		},
+		"LS_DynamicOutput_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_DynamicOutput'"
+		},
+		"LS_Folder_Link_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_Folder_Link'"
+		},
+		"LS_Multiple_Output_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Multiple_Output'"
+		},
+		"LS_output_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_output'"
+		},
+		"LS_SQL_Table_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_SQL_Table'"
+		},
+		"LS_blob_input_data_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_blob_input_data'"
+		},
+		"ls_AzureBlobStorage_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_AzureBlobStorage'"
+		},
+		"ls_AzureSqlDatabase_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_AzureSqlDatabase'"
+		},
+		"LS_AzureDataExplorer_properties_typeProperties_endpoint": {
+			"type": "string",
+			"defaultValue": "https://sampleadxcluster24.eastus.kusto.windows.net"
+		},
+		"LS_AzureDataExplorer_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "carsDB"
+		},
+		"LS_Cars_CSV_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlspracticesession2024.dfs.core.windows.net/"
+		},
+		"LS_Datalake_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlspractice24.dfs.core.windows.net/"
+		},
+		"LS_DynamicHttpServer_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "@{linkedService().baseURL}"
+		},
+		"LS_DynamicOutput_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://datalakepractice24.dfs.core.windows.net/"
+		},
+		"LS_HttpServer_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://opendata.ecdc.europa.eu/"
+		},
+		"LS_HttpServer_Dynamic_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "@{linkedService().baseURL}"
+		},
+		"LS_Multiple_Output_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://datalakepractice24.dfs.core.windows.net/"
+		},
+		"LS_output_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://datalakepractice24.dfs.core.windows.net/"
+		},
+		"ls_AzureSqlDatabase_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "practice24.database.windows.net"
+		},
+		"ls_AzureSqlDatabase_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "demodb"
+		},
+		"ls_AzureSqlDatabase_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "tan"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "scenarioADF_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_BlobInput_connectionString": {
+						"value": "[parameters('LS_BlobInput_connectionString')]"
+					},
+					"LS_Blobstorage_connectionString": {
+						"value": "[parameters('LS_Blobstorage_connectionString')]"
+					},
+					"LS_Cars_CSV_accountKey": {
+						"value": "[parameters('LS_Cars_CSV_accountKey')]"
+					},
+					"LS_Datalake_accountKey": {
+						"value": "[parameters('LS_Datalake_accountKey')]"
+					},
+					"LS_DynamicOutput_accountKey": {
+						"value": "[parameters('LS_DynamicOutput_accountKey')]"
+					},
+					"LS_Folder_Link_connectionString": {
+						"value": "[parameters('LS_Folder_Link_connectionString')]"
+					},
+					"LS_Multiple_Output_accountKey": {
+						"value": "[parameters('LS_Multiple_Output_accountKey')]"
+					},
+					"LS_output_accountKey": {
+						"value": "[parameters('LS_output_accountKey')]"
+					},
+					"LS_SQL_Table_connectionString": {
+						"value": "[parameters('LS_SQL_Table_connectionString')]"
+					},
+					"LS_blob_input_data_connectionString": {
+						"value": "[parameters('LS_blob_input_data_connectionString')]"
+					},
+					"ls_AzureBlobStorage_connectionString": {
+						"value": "[parameters('ls_AzureBlobStorage_connectionString')]"
+					},
+					"ls_AzureSqlDatabase_password": {
+						"value": "[parameters('ls_AzureSqlDatabase_password')]"
+					},
+					"LS_Cars_CSV_properties_typeProperties_url": {
+						"value": "[parameters('LS_Cars_CSV_properties_typeProperties_url')]"
+					},
+					"LS_Datalake_properties_typeProperties_url": {
+						"value": "[parameters('LS_Datalake_properties_typeProperties_url')]"
+					},
+					"LS_DynamicHttpServer_properties_typeProperties_url": {
+						"value": "[parameters('LS_DynamicHttpServer_properties_typeProperties_url')]"
+					},
+					"LS_DynamicOutput_properties_typeProperties_url": {
+						"value": "[parameters('LS_DynamicOutput_properties_typeProperties_url')]"
+					},
+					"LS_HttpServer_properties_typeProperties_url": {
+						"value": "[parameters('LS_HttpServer_properties_typeProperties_url')]"
+					},
+					"LS_HttpServer_Dynamic_properties_typeProperties_url": {
+						"value": "[parameters('LS_HttpServer_Dynamic_properties_typeProperties_url')]"
+					},
+					"LS_Multiple_Output_properties_typeProperties_url": {
+						"value": "[parameters('LS_Multiple_Output_properties_typeProperties_url')]"
+					},
+					"LS_output_properties_typeProperties_url": {
+						"value": "[parameters('LS_output_properties_typeProperties_url')]"
+					},
+					"ls_AzureSqlDatabase_properties_typeProperties_server": {
+						"value": "[parameters('ls_AzureSqlDatabase_properties_typeProperties_server')]"
+					},
+					"ls_AzureSqlDatabase_properties_typeProperties_database": {
+						"value": "[parameters('ls_AzureSqlDatabase_properties_typeProperties_database')]"
+					},
+					"ls_AzureSqlDatabase_properties_typeProperties_userName": {
+						"value": "[parameters('ls_AzureSqlDatabase_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "scenarioADF_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_AzureDataExplorer_properties_typeProperties_endpoint": {
+						"value": "[parameters('LS_AzureDataExplorer_properties_typeProperties_endpoint')]"
+					},
+					"LS_AzureDataExplorer_properties_typeProperties_database": {
+						"value": "[parameters('LS_AzureDataExplorer_properties_typeProperties_database')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'scenarioADF_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "scenarioADF_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'scenarioADF_ArmTemplate_1')]"
+			]
+		}
+	]
+}
