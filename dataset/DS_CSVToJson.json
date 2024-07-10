@@ -1,0 +1,48 @@
+{
+	"name": "DS_CSVToJson",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_AzureBlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "data"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"salesID": {
+					"type": "string"
+				},
+				"Date": {
+					"type": "string"
+				},
+				"Place": {
+					"type": "string"
+				},
+				"Items": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"Item": {
+								"type": "string"
+							},
+							"Qty": {
+								"type": "integer"
+							},
+							"Value": {
+								"type": "integer"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

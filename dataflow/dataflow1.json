@@ -1,0 +1,66 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DS_JsonCSV",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DS_CSVToJson",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "derivedColumn1"
+				},
+				{
+					"name": "aggregate1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          salesID as string,",
+				"          Date as string,",
+				"          Place as string,",
+				"          item as string,",
+				"          Qty as string,",
+				"          Value as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 derive(Items = @(item=item,",
+				"          qty=Qty,",
+				"          value=Value)) ~> derivedColumn1",
+				"derivedColumn1 aggregate(groupBy(salesID,",
+				"          Date,",
+				"          Place),",
+				"     Items = collect(Items)) ~> aggregate1",
+				"aggregate1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          salesID as string,",
+				"          Date as string,",
+				"          Place as string,",
+				"          Items as (Item as string, Qty as integer, Value as integer)[]",
+				"     ),",
+				"     partitionFileNames:['CsvToJson.json'],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> sink1"
+			]
+		}
+	}
+}
