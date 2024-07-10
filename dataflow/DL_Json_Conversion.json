@@ -55,8 +55,10 @@
 				"          Column1 as string,",
 				"          Column2 as string",
 				"     ),",
+				"     partitionFileNames:['JsonToCsv.csv'],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> sink1"
 			]
 		}
 	}

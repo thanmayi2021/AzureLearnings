@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "DL_Cleaning_Fixedlength",
+						"referenceName": "DL_CSV_Conversion",
 						"type": "DataFlowReference"
 					},
 					"compute": {

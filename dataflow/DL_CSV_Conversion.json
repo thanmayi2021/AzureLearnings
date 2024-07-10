@@ -1,5 +1,5 @@
 {
-	"name": "dataflow1",
+	"name": "DL_CSV_Conversion",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -35,8 +35,8 @@
 				"          Date as string,",
 				"          Place as string,",
 				"          item as string,",
-				"          Qty as string,",
-				"          Value as string",
+				"          Qty as integer,",
+				"          Value as integer",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
@@ -59,6 +59,12 @@
 				"     partitionFileNames:['CsvToJson.json'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          salesID,",
+				"          Date,",
+				"          Place,",
+				"          Items",
+				"     ),",
 				"     partitionBy('hash', 1)) ~> sink1"
 			]
 		}
