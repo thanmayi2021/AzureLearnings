@@ -38,7 +38,10 @@
 		"ls_AzureBlobStorage_connectionString": {
 			"value": ""
 		},
-		"ls_AzureSqlDatabase_password": {
+		"ls_AzureSqlDatabase_connectionString": {
+			"value": ""
+		},
+		"ls_AzureSqlDatabase1_connectionString": {
 			"value": ""
 		},
 		"LS_AzureDataExplorer_properties_typeProperties_endpoint": {
@@ -70,15 +73,6 @@
 		},
 		"LS_output_properties_typeProperties_url": {
 			"value": "https://datalakepractice24.dfs.core.windows.net/"
-		},
-		"ls_AzureSqlDatabase_properties_typeProperties_server": {
-			"value": "practice24.database.windows.net"
-		},
-		"ls_AzureSqlDatabase_properties_typeProperties_database": {
-			"value": "demodb"
-		},
-		"ls_AzureSqlDatabase_properties_typeProperties_userName": {
-			"value": "tan"
 		}
 	}
 }
