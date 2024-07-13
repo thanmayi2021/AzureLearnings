@@ -1,0 +1,35 @@
+{
+	"name": "DelimitedText8",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_AzureBlobStorage_folder",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "RowId",
+				"type": "String"
+			},
+			{
+				"name": "Column1",
+				"type": "String"
+			},
+			{
+				"name": "Column2",
+				"type": "String"
+			}
+		]
+	}
+}
