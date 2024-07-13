@@ -1,0 +1,84 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "24practiceDF24"
+		},
+		"LS_BlobInput_connectionString": {
+			"value": ""
+		},
+		"LS_Blobstorage_connectionString": {
+			"value": ""
+		},
+		"LS_Cars_CSV_accountKey": {
+			"value": ""
+		},
+		"LS_Datalake_accountKey": {
+			"value": ""
+		},
+		"LS_DynamicOutput_accountKey": {
+			"value": ""
+		},
+		"LS_Folder_Link_connectionString": {
+			"value": ""
+		},
+		"LS_Multiple_Output_accountKey": {
+			"value": ""
+		},
+		"LS_output_accountKey": {
+			"value": ""
+		},
+		"LS_SQL_Table_connectionString": {
+			"value": ""
+		},
+		"LS_blob_input_data_connectionString": {
+			"value": ""
+		},
+		"ls_AzureBlobStorage_connectionString": {
+			"value": ""
+		},
+		"ls_AzureBlobStorage_folder_connectionString": {
+			"value": ""
+		},
+		"ls_AzureSqlDatabase_connectionString": {
+			"value": ""
+		},
+		"ls_AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"ls_blob_output_connectionString": {
+			"value": ""
+		},
+		"LS_AzureDataExplorer_properties_typeProperties_endpoint": {
+			"value": "https://sampleadxcluster24.eastus.kusto.windows.net"
+		},
+		"LS_AzureDataExplorer_properties_typeProperties_database": {
+			"value": "carsDB"
+		},
+		"LS_Cars_CSV_properties_typeProperties_url": {
+			"value": "https://adlspracticesession2024.dfs.core.windows.net/"
+		},
+		"LS_Datalake_properties_typeProperties_url": {
+			"value": "https://adlspractice24.dfs.core.windows.net/"
+		},
+		"LS_DynamicHttpServer_properties_typeProperties_url": {
+			"value": "@{linkedService().baseURL}"
+		},
+		"LS_DynamicOutput_properties_typeProperties_url": {
+			"value": "https://datalakepractice24.dfs.core.windows.net/"
+		},
+		"LS_HttpServer_properties_typeProperties_url": {
+			"value": "https://opendata.ecdc.europa.eu/"
+		},
+		"LS_HttpServer_Dynamic_properties_typeProperties_url": {
+			"value": "@{linkedService().baseURL}"
+		},
+		"LS_Multiple_Output_properties_typeProperties_url": {
+			"value": "https://datalakepractice24.dfs.core.windows.net/"
+		},
+		"LS_output_properties_typeProperties_url": {
+			"value": "https://datalakepractice24.dfs.core.windows.net/"
+		}
+	}
+}
