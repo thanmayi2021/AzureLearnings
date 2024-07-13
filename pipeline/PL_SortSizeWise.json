@@ -67,7 +67,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"filename": {
-											"value": "@activity('Get Metadata1').output.itemName",
+											"value": "@item().name",
 											"type": "Expression"
 										}
 									}
