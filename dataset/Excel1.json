@@ -1,0 +1,25 @@
+{
+	"name": "Excel1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_AzureBlobStorage_folder",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"sheetname": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "EmployeeCountries.xlsx",
+				"container": "data"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
