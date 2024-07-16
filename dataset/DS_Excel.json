@@ -20,7 +20,8 @@
 					"type": "Expression"
 				},
 				"container": "data"
-			}
+			},
+			"sheetIndex": 0
 		},
 		"schema": [
 			{
