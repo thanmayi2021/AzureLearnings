@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "24practiceDF24"
 		},
+		"LS_Between_accountKey": {
+			"value": ""
+		},
 		"LS_BlobInput_connectionString": {
 			"value": ""
 		},
@@ -23,6 +26,9 @@
 		"LS_Folder_Link_connectionString": {
 			"value": ""
 		},
+		"LS_Greater2k_accountKey": {
+			"value": ""
+		},
 		"LS_Multiple_Output_accountKey": {
 			"value": ""
 		},
@@ -32,7 +38,13 @@
 		"LS_SQL_Table_connectionString": {
 			"value": ""
 		},
+		"LS_adls_folder_accountKey": {
+			"value": ""
+		},
 		"LS_blob_input_data_connectionString": {
+			"value": ""
+		},
+		"LS_lessthan1kb_accountKey": {
 			"value": ""
 		},
 		"ls_AzureBlobStorage_connectionString": {
@@ -56,6 +68,9 @@
 		"LS_AzureDataExplorer_properties_typeProperties_database": {
 			"value": "carsDB"
 		},
+		"LS_Between_properties_typeProperties_url": {
+			"value": "https://demoadlsgen224.dfs.core.windows.net/"
+		},
 		"LS_Cars_CSV_properties_typeProperties_url": {
 			"value": "https://adlspracticesession2024.dfs.core.windows.net/"
 		},
@@ -68,6 +83,9 @@
 		"LS_DynamicOutput_properties_typeProperties_url": {
 			"value": "https://datalakepractice24.dfs.core.windows.net/"
 		},
+		"LS_Greater2k_properties_typeProperties_url": {
+			"value": "https://demoadlsgen224.dfs.core.windows.net/"
+		},
 		"LS_HttpServer_properties_typeProperties_url": {
 			"value": "https://opendata.ecdc.europa.eu/"
 		},
@@ -79,6 +97,12 @@
 		},
 		"LS_output_properties_typeProperties_url": {
 			"value": "https://datalakepractice24.dfs.core.windows.net/"
+		},
+		"LS_adls_folder_properties_typeProperties_url": {
+			"value": "https://demoadlsgen224.dfs.core.windows.net/"
+		},
+		"LS_lessthan1kb_properties_typeProperties_url": {
+			"value": "https://demoadlsgen224.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"value": ""

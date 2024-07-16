@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "24practiceDF24"
 		},
+		"LS_Between_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Between'"
+		},
 		"LS_BlobInput_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_BlobInput'"
@@ -31,6 +35,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_Folder_Link'"
 		},
+		"LS_Greater2k_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Greater2k'"
+		},
 		"LS_Multiple_Output_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Multiple_Output'"
@@ -43,9 +51,17 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_SQL_Table'"
 		},
+		"LS_adls_folder_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_adls_folder'"
+		},
 		"LS_blob_input_data_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_blob_input_data'"
+		},
+		"LS_lessthan1kb_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_lessthan1kb'"
 		},
 		"ls_AzureBlobStorage_connectionString": {
 			"type": "secureString",
@@ -55,17 +71,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_AzureBlobStorage_folder'"
 		},
-		"ls_AzureSqlDatabase_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'ls_AzureSqlDatabase'"
-		},
-		"ls_AzureSqlDatabase1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'ls_AzureSqlDatabase1'"
-		},
-		"ls_blob_output_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'ls_blob_output'"
+		"LS_Between_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://demoadlsgen224.dfs.core.windows.net/"
 		},
 		"LS_Cars_CSV_properties_typeProperties_url": {
 			"type": "string",
@@ -83,6 +91,10 @@
 			"type": "string",
 			"defaultValue": "https://datalakepractice24.dfs.core.windows.net/"
 		},
+		"LS_Greater2k_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://demoadlsgen224.dfs.core.windows.net/"
+		},
 		"LS_HttpServer_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://opendata.ecdc.europa.eu/"
@@ -98,6 +110,14 @@
 		"LS_output_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://datalakepractice24.dfs.core.windows.net/"
+		},
+		"LS_adls_folder_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://demoadlsgen224.dfs.core.windows.net/"
+		},
+		"LS_lessthan1kb_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://demoadlsgen224.dfs.core.windows.net/"
 		}
 	},
 	"variables": {
@@ -205,6 +225,23 @@
 					}
 				},
 				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_Between')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_Between_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_Between_accountKey')]"
+					}
+				}
 			},
 			"dependsOn": []
 		},
@@ -322,6 +359,23 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/LS_Greater2k')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_Greater2k_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_Greater2k_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/LS_HttpServer')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -404,6 +458,23 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/LS_adls_folder')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_adls_folder_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_adls_folder_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/LS_blob_input_data')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -412,6 +483,23 @@
 				"type": "AzureBlobStorage",
 				"typeProperties": {
 					"connectionString": "[parameters('LS_blob_input_data_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_lessthan1kb')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_lessthan1kb_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_lessthan1kb_accountKey')]"
+					}
 				}
 			},
 			"dependsOn": []
@@ -438,57 +526,6 @@
 				"type": "AzureBlobStorage",
 				"typeProperties": {
 					"connectionString": "[parameters('ls_AzureBlobStorage_folder_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ls_AzureSqlDatabase')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDatabase",
-				"typeProperties": {
-					"connectionString": "[parameters('ls_AzureSqlDatabase_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ls_AzureSqlDatabase1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDatabase",
-				"typeProperties": {
-					"connectionString": "[parameters('ls_AzureSqlDatabase1_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ls_blob_output')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('ls_blob_output_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Cred_ADX')]",
-			"type": "Microsoft.DataFactory/factories/credentials",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "ManagedIdentity",
-				"typeProperties": {
-					"resourceId": "/subscriptions/bbda4024-ea06-4185-96b1-42f3197df61c/resourcegroups/adxtoblobpipeline/providers/Microsoft.ManagedIdentity/userAssignedIdentities/adfaccesstoadx"
 				}
 			},
 			"dependsOn": []
