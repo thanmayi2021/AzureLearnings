@@ -83,6 +83,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_blob_output'"
 		},
+		"LS_SQL_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQL'"
+		},
 		"LS_AzureDataExplorer_properties_typeProperties_endpoint": {
 			"type": "string",
 			"defaultValue": "https://sampleadxcluster24.eastus.kusto.windows.net"
@@ -138,6 +142,18 @@
 		"LS_lessthan1kb_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://demoadlsgen224.dfs.core.windows.net/"
+		},
+		"LS_SQL_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "demoserver24.database.windows.net"
+		},
+		"LS_SQL_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "demodb"
+		},
+		"LS_SQL_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "tan"
 		},
 		"containerUri": {
 			"type": "string",
@@ -276,6 +292,18 @@
 					},
 					"ls_blob_output_connectionString": {
 						"value": "[parameters('ls_blob_output_connectionString')]"
+					},
+					"LS_SQL_password": {
+						"value": "[parameters('LS_SQL_password')]"
+					},
+					"LS_SQL_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQL_properties_typeProperties_server')]"
+					},
+					"LS_SQL_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQL_properties_typeProperties_database')]"
+					},
+					"LS_SQL_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQL_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -327,6 +355,26 @@
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', '24practiceDF24_ArmTemplate_2')]"
+			]
+		},
+		{
+			"name": "24practiceDF24_ArmTemplate_4",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_4.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', '24practiceDF24_ArmTemplate_3')]"
 			]
 		}
 	]

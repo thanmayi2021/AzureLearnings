@@ -62,6 +62,9 @@
 		"ls_blob_output_connectionString": {
 			"value": ""
 		},
+		"LS_SQL_password": {
+			"value": ""
+		},
 		"LS_AzureDataExplorer_properties_typeProperties_endpoint": {
 			"value": "https://sampleadxcluster24.eastus.kusto.windows.net"
 		},
@@ -103,6 +106,15 @@
 		},
 		"LS_lessthan1kb_properties_typeProperties_url": {
 			"value": "https://demoadlsgen224.dfs.core.windows.net/"
+		},
+		"LS_SQL_properties_typeProperties_server": {
+			"value": "demoserver24.database.windows.net"
+		},
+		"LS_SQL_properties_typeProperties_database": {
+			"value": "demodb"
+		},
+		"LS_SQL_properties_typeProperties_userName": {
+			"value": "tan"
 		},
 		"containerUri": {
 			"value": ""
