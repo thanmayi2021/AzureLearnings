@@ -87,13 +87,7 @@
 							"inputs": [
 								{
 									"referenceName": "DS_Excel",
-									"type": "DatasetReference",
-									"parameters": {
-										"filename": {
-											"value": "@item().name",
-											"type": "Expression"
-										}
-									}
+									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
