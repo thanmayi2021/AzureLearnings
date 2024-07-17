@@ -47,6 +47,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_output'"
 		},
+		"LS_SQL_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQL'"
+		},
 		"LS_SQL_Table_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_SQL_Table'"
@@ -82,10 +86,6 @@
 		"ls_blob_output_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_blob_output'"
-		},
-		"LS_SQL_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'LS_SQL'"
 		},
 		"LS_AzureDataExplorer_properties_typeProperties_endpoint": {
 			"type": "string",
@@ -135,14 +135,6 @@
 			"type": "string",
 			"defaultValue": "https://datalakepractice24.dfs.core.windows.net/"
 		},
-		"LS_adls_folder_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://demoadlsgen224.dfs.core.windows.net/"
-		},
-		"LS_lessthan1kb_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://demoadlsgen224.dfs.core.windows.net/"
-		},
 		"LS_SQL_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "demoserver24.database.windows.net"
@@ -154,6 +146,14 @@
 		"LS_SQL_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "tan"
+		},
+		"LS_adls_folder_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://demoadlsgen224.dfs.core.windows.net/"
+		},
+		"LS_lessthan1kb_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://demoadlsgen224.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"type": "string",
@@ -212,6 +212,9 @@
 					"LS_output_accountKey": {
 						"value": "[parameters('LS_output_accountKey')]"
 					},
+					"LS_SQL_password": {
+						"value": "[parameters('LS_SQL_password')]"
+					},
 					"LS_SQL_Table_connectionString": {
 						"value": "[parameters('LS_SQL_Table_connectionString')]"
 					},
@@ -226,9 +229,6 @@
 					},
 					"ls_AzureBlobStorage_connectionString": {
 						"value": "[parameters('ls_AzureBlobStorage_connectionString')]"
-					},
-					"ls_AzureBlobStorage_folder_connectionString": {
-						"value": "[parameters('ls_AzureBlobStorage_folder_connectionString')]"
 					},
 					"LS_Between_properties_typeProperties_url": {
 						"value": "[parameters('LS_Between_properties_typeProperties_url')]"
@@ -260,6 +260,15 @@
 					"LS_output_properties_typeProperties_url": {
 						"value": "[parameters('LS_output_properties_typeProperties_url')]"
 					},
+					"LS_SQL_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQL_properties_typeProperties_server')]"
+					},
+					"LS_SQL_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQL_properties_typeProperties_database')]"
+					},
+					"LS_SQL_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQL_properties_typeProperties_userName')]"
+					},
 					"LS_adls_folder_properties_typeProperties_url": {
 						"value": "[parameters('LS_adls_folder_properties_typeProperties_url')]"
 					},
@@ -284,6 +293,9 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"ls_AzureBlobStorage_folder_connectionString": {
+						"value": "[parameters('ls_AzureBlobStorage_folder_connectionString')]"
+					},
 					"ls_AzureSqlDatabase_connectionString": {
 						"value": "[parameters('ls_AzureSqlDatabase_connectionString')]"
 					},
@@ -292,18 +304,6 @@
 					},
 					"ls_blob_output_connectionString": {
 						"value": "[parameters('ls_blob_output_connectionString')]"
-					},
-					"LS_SQL_password": {
-						"value": "[parameters('LS_SQL_password')]"
-					},
-					"LS_SQL_properties_typeProperties_server": {
-						"value": "[parameters('LS_SQL_properties_typeProperties_server')]"
-					},
-					"LS_SQL_properties_typeProperties_database": {
-						"value": "[parameters('LS_SQL_properties_typeProperties_database')]"
-					},
-					"LS_SQL_properties_typeProperties_userName": {
-						"value": "[parameters('LS_SQL_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -324,12 +324,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"LS_AzureDataExplorer_properties_typeProperties_endpoint": {
-						"value": "[parameters('LS_AzureDataExplorer_properties_typeProperties_endpoint')]"
-					},
-					"LS_AzureDataExplorer_properties_typeProperties_database": {
-						"value": "[parameters('LS_AzureDataExplorer_properties_typeProperties_database')]"
 					}
 				}
 			},
@@ -350,6 +344,12 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"LS_AzureDataExplorer_properties_typeProperties_endpoint": {
+						"value": "[parameters('LS_AzureDataExplorer_properties_typeProperties_endpoint')]"
+					},
+					"LS_AzureDataExplorer_properties_typeProperties_database": {
+						"value": "[parameters('LS_AzureDataExplorer_properties_typeProperties_database')]"
 					}
 				}
 			},

@@ -35,6 +35,9 @@
 		"LS_output_accountKey": {
 			"value": ""
 		},
+		"LS_SQL_password": {
+			"value": ""
+		},
 		"LS_SQL_Table_connectionString": {
 			"value": ""
 		},
@@ -60,9 +63,6 @@
 			"value": ""
 		},
 		"ls_blob_output_connectionString": {
-			"value": ""
-		},
-		"LS_SQL_password": {
 			"value": ""
 		},
 		"LS_AzureDataExplorer_properties_typeProperties_endpoint": {
@@ -101,12 +101,6 @@
 		"LS_output_properties_typeProperties_url": {
 			"value": "https://datalakepractice24.dfs.core.windows.net/"
 		},
-		"LS_adls_folder_properties_typeProperties_url": {
-			"value": "https://demoadlsgen224.dfs.core.windows.net/"
-		},
-		"LS_lessthan1kb_properties_typeProperties_url": {
-			"value": "https://demoadlsgen224.dfs.core.windows.net/"
-		},
 		"LS_SQL_properties_typeProperties_server": {
 			"value": "demoserver24.database.windows.net"
 		},
@@ -115,6 +109,12 @@
 		},
 		"LS_SQL_properties_typeProperties_userName": {
 			"value": "tan"
+		},
+		"LS_adls_folder_properties_typeProperties_url": {
+			"value": "https://demoadlsgen224.dfs.core.windows.net/"
+		},
+		"LS_lessthan1kb_properties_typeProperties_url": {
+			"value": "https://demoadlsgen224.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"value": ""
