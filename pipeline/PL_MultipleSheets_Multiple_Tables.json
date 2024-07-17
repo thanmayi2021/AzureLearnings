@@ -52,7 +52,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"expression": {
-									"value": "@contains(item().sheetname,'EMP')",
+									"value": "@contains(item().sheetname,'Emp')",
 									"type": "Expression"
 								},
 								"ifFalseActivities": [
