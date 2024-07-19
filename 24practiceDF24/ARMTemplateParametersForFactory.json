@@ -5,6 +5,15 @@
 		"factoryName": {
 			"value": "24practiceDF24"
 		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_password": {
+			"value": ""
+		},
+		"ExcelTable_password": {
+			"value": ""
+		},
 		"LS_Between_accountKey": {
 			"value": ""
 		},
@@ -67,6 +76,33 @@
 		},
 		"ls_sql_table1_password": {
 			"value": ""
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "demoserver24.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "demodb"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "tan"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_server": {
+			"value": "demoserver24.database.windows.net"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_database": {
+			"value": "demodb"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"value": "tan"
+		},
+		"ExcelTable_properties_typeProperties_server": {
+			"value": "demoserver24.database.windows.net"
+		},
+		"ExcelTable_properties_typeProperties_database": {
+			"value": "demodb"
+		},
+		"ExcelTable_properties_typeProperties_userName": {
+			"value": "tan"
 		},
 		"LS_AzureDataExplorer_properties_typeProperties_endpoint": {
 			"value": "https://sampleadxcluster24.eastus.kusto.windows.net"
