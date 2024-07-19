@@ -8,6 +8,9 @@
 		"parameters": {
 			"sheetname": {
 				"type": "string"
+			},
+			"file": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
