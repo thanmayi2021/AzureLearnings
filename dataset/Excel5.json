@@ -5,6 +5,14 @@
 			"referenceName": "LS_adls_folder",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"sheetname": {
+				"type": "string"
+			},
+			"filename": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
