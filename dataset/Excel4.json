@@ -28,7 +28,8 @@
 				},
 				"folderPath": "input",
 				"fileSystem": "data"
-			}
+			},
+			"firstRowAsHeader": true
 		},
 		"schema": [
 			{
