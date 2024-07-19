@@ -107,7 +107,17 @@
 										"inputs": [
 											{
 												"referenceName": "Excel5",
-												"type": "DatasetReference"
+												"type": "DatasetReference",
+												"parameters": {
+													"sheetname": {
+														"value": "@item().sheetname",
+														"type": "Expression"
+													},
+													"filename": {
+														"value": "@pipeline().parameters.filename",
+														"type": "Expression"
+													}
+												}
 											}
 										],
 										"outputs": [
