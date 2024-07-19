@@ -1,0 +1,27 @@
+{
+	"name": "Excel5",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_adls_folder",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"sheetname": {
+				"type": "string"
+			},
+			"filename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "input",
+				"fileSystem": "data"
+			}
+		},
+		"schema": []
+	}
+}
