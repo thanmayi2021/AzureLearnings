@@ -2519,7 +2519,10 @@
 				"annotations": [],
 				"type": "AzureSqlTable",
 				"schema": [],
-				"typeProperties": {}
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "excel_config"
+				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/ExcelTable')]"
@@ -2560,7 +2563,7 @@
 				"schema": [],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "dept_name"
+					"table": "dept_multiple"
 				}
 			},
 			"dependsOn": [
