@@ -23,7 +23,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@dataset().file",
+					"value": "@dataset().filename",
 					"type": "Expression"
 				},
 				"folderPath": "input",
