@@ -77,6 +77,9 @@
 		"ls_sql_table1_password": {
 			"value": ""
 		},
+		"linkedService1_password": {
+			"value": ""
+		},
 		"AzureSqlDatabase1_properties_typeProperties_server": {
 			"value": "demoserver24.database.windows.net"
 		},
@@ -162,6 +165,15 @@
 			"value": "demodb"
 		},
 		"ls_sql_table1_properties_typeProperties_userName": {
+			"value": "tan"
+		},
+		"linkedService1_properties_typeProperties_server": {
+			"value": "demoserver24.database.windows.net"
+		},
+		"linkedService1_properties_typeProperties_database": {
+			"value": "demodb"
+		},
+		"linkedService1_properties_typeProperties_userName": {
 			"value": "tan"
 		},
 		"containerUri": {
